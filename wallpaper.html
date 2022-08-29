@@ -1,0 +1,252 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ghost {
+  -webkit-animation: float 1.2s ease-in-out alternate infinite;
+          animation: float 1.2s ease-in-out alternate infinite;
+}
+.ghost .head {
+  background: #fff;
+  height: 80px;
+  position: relative;
+  width: 80px;
+  border-top-left-radius: 45%;
+  border-top-right-radius: 45%;
+  z-index: 2;
+}
+.ghost .head .headphones {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  left: 50%;
+  transform: translateY(-10px) translateX(-50px);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-top: 10px solid #fff;
+  border-left: 10px solid #fff;
+  border-right: 10px solid #fff;
+}
+.ghost .head .headphones .cup {
+  position: absolute;
+  bottom: 0;
+  width: 18px;
+  height: 40px;
+  background: #fff;
+}
+.ghost .head .headphones .cup:nth-child(1) {
+  border-top-left-radius: 16%;
+  border-top-right-radius: 2%;
+  border-bottom-left-radius: 16%;
+  transform: translateX(-100%);
+}
+.ghost .head .headphones .cup:nth-child(2) {
+  border-top-right-radius: 16%;
+  border-top-left-radius: 2%;
+  border-bottom-right-radius: 16%;
+  right: 0;
+  transform: translateX(100%);
+}
+.ghost .head .face {
+  position: absolute;
+  width: 60px;
+  margin-left: 10px;
+  margin-top: 25px;
+  z-index: 2;
+}
+.ghost .head .face .eyes {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  transform: translateX(4px);
+}
+.ghost .head .face .eyes .eye {
+  position: absolute;
+}
+.ghost .head .face .eyes .eye:nth-child(1) {
+  left: 0;
+}
+.ghost .head .face .eyes .eye:nth-child(1) .eyebrow {
+  height: 9.333333333333332px;
+  border-bottom: 3px solid #212121;
+  background: #fff;
+  width: 24px;
+  transform: translateX(-4px);
+}
+.ghost .head .face .eyes .eye:nth-child(2) {
+  right: 0;
+}
+.ghost .head .face .eyes .eye:nth-child(2) .eyebrow {
+  height: 9px;
+  width: 20px;
+  border-top: 3px solid #212121;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  transform: translateY(-8px);
+}
+.ghost .head .face .eyes .eye .eyebrow {
+  position: absolute;
+  width: 20px;
+  z-index: 4;
+}
+.ghost .head .face .eyes .eye .pupil {
+  position: relative;
+  width: 20px;
+  height: 28px;
+  border-radius: 45%;
+  background: #212121;
+  z-index: 3;
+}
+.ghost .head .face .eyes .eye .pupil::before {
+  position: absolute;
+  content: '';
+  display: block;
+  left: 50%;
+  top: 50%;
+  width: 9px;
+  height: 18px;
+  border-radius: 45%;
+  background: #fff;
+  z-index: 4;
+  transform: translate(-40%, -50%);
+}
+.ghost .head .face .mouth {
+  position: absolute;
+  margin-top: 40px;
+  width: 22px;
+  height: 4px;
+  left: 50%;
+  border-top: 2px solid #212121;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  transform: translateX(-40%) rotate(-2deg);
+  border-top-right-radius: 30%;
+}
+.ghost .body {
+  width: 80px;
+}
+.ghost .body .torso {
+  height: 50px;
+  background: #fff;
+  z-index: 2;
+}
+.ghost .body .bottom {
+  position: relative;
+  z-index: 3;
+}
+.ghost .body .bottom .bump {
+  position: absolute;
+  width: 26.666666666666668px;
+  height: 20px;
+  border-bottom-left-radius: 44%;
+  border-bottom-right-radius: 44%;
+  background: #fff;
+}
+.ghost .body .bottom .bump:nth-child(2) {
+  left: 50%;
+  transform: translateX(-50%) scale(1.25);
+}
+.ghost .body .bottom .bump:nth-child(3) {
+  right: 0;
+}
+.shadow {
+  position: absolute;
+  width: 80px;
+  height: 18px;
+  margin-top: 32px;
+  border-radius: 50%;
+  -webkit-animation: shrink 1.2s ease-in-out alternate infinite;
+          animation: shrink 1.2s ease-in-out alternate infinite;
+  background: rgba(255,255,255,0.08);
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: #212121;
+}
+@-webkit-keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-12px);
+  }
+}
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-12px);
+  }
+}
+@-webkit-keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.85);
+  }
+}
+@keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.85);
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="ghost">
+          <div class="head">
+            <div class="headphones">
+              <div class="cup"></div>
+              <div class="cup"></div>
+            </div>
+            <div class="face">
+              <div class="eyes">
+                <div class="eye">
+                  <div class="eyebrow"></div>
+                  <div class="pupil"></div>
+                </div>
+                <div class="eye">
+                  <div class="eyebrow"></div>
+                  <div class="pupil"></div>
+                </div>
+              </div>
+              <div class="mouth"></div>
+            </div>
+          </div>
+          <div class="body">
+            <div class="torso"></div>
+            <div class="bottom">
+              <div class="bump"></div>
+              <div class="bump"></div>
+              <div class="bump"></div>
+            </div>
+          </div>
+        </div>
+        <div class="shadow"></div>
+      </div>
+  </body>
+  </html>
